@@ -153,10 +153,14 @@ def main() -> None:
         solution += toChr(car.blockedBy.name) + " 1 " + dir[0][1]
       elif movement1 == True:
         solution +=  toChr(car.blockedBy.name) + " 2 " + dir[1][1]
+      elif movement0 != False and movement1 != False:
+        solution1 = str(move(car.blockedBy, dir[0], blockingRow, len(parkingRow))) + toChr(car.blockedBy.name) + " 1 " + dir[0][1]
+        solution2 = str(move(car.blockedBy, dir[1], blockingRow, len(parkingRow))) + toChr(car.blockedBy.name) + " 2 " + dir[1][1]
+        solution += solution1 if len(solution1) <= len(solution2) else solution2
       elif movement0 != False:
         solution += str(move(car.blockedBy, dir[0], blockingRow, len(parkingRow))) + toChr(car.blockedBy.name) + " 1 " + dir[0][1]
       elif movement1 != False:
-        solution += str(move(car.blockedBy, [dir[1][0], dir[1][1]], blockingRow, len(parkingRow))) + toChr(car.blockedBy.name) + " 2 " + dir[1][1]
+        solution += str(move(car.blockedBy, dir[1], blockingRow, len(parkingRow))) + toChr(car.blockedBy.name) + " 2 " + dir[1][1]
       else:
         solution += toChr(car.blockedBy.name) + " Der Wagen kann nicht so bewegt werden, dass das Auto befreit werden kann"
 
