@@ -156,7 +156,7 @@ def main() -> None:
       elif movement0 != False and movement1 != False:
         solution1 = str(move(car.blockedBy, dir[0], blockingRow, len(parkingRow))) + toChr(car.blockedBy.name) + " 1 " + dir[0][1]
         solution2 = str(move(car.blockedBy, dir[1], blockingRow, len(parkingRow))) + toChr(car.blockedBy.name) + " 2 " + dir[1][1]
-        solution += solution1 if len(solution1) <= len(solution2) else solution2
+        solution += solution1 if (len(solution1) <= len(solution2) and not "Error" in solution1) or "Error" in solution2 else solution2
       elif movement0 != False:
         solution += str(move(car.blockedBy, dir[0], blockingRow, len(parkingRow))) + toChr(car.blockedBy.name) + " 1 " + dir[0][1]
       elif movement1 != False:
@@ -166,8 +166,8 @@ def main() -> None:
 
     solution += "\n"
 
-  print(*parkingRow, sep = ", ")
-  print(*blockingRow, sep = ", ")
+  #print(*parkingRow, sep = ", ")
+  #print(*blockingRow, sep = ", ")
   #print(data)
   print(solution)
 
