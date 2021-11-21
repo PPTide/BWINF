@@ -123,7 +123,7 @@ def move(car, dir, blockingRow, size):
   elif movement == False:
     return "Error"
   else: 
-    return str(move(movement, [dir[0]/abs(dir[0]), dir[1]], blockingRow, size)) + toChr(movement.name) + " 1 " + dir[1] + "; "
+    return str(move(movement, [dir[0], dir[1]], blockingRow, size)) + toChr(movement.name) + " " + str(abs(dir[0])) + " " + dir[1] + "; "
 
 def main() -> None:
   """
