@@ -95,7 +95,8 @@ def canMove(blockingRow:List[carDiagonal], car:carDiagonal, size:int, amount:int
     return True
 
   if not canMove(blockingRow, car, size, amount - (amount/abs(amount))):
-    # Gucken, ob das Auto zu der Position einen näher an der Startposition gehen kann
+    # Gucken, ob das Auto zu der Position einen 
+    # näher an der Startposition gehen kann
     return canMove(blockingRow, car, size, amount - (amount/abs(amount)))
     
   if  car.blocking[0] + amount < 0 or \
@@ -166,9 +167,7 @@ def main() -> None:
 
     solution += "\n"
 
-  #print(*parkingRow, sep = ", ")
-  #print(*blockingRow, sep = ", ")
-  #print(data)
+    
   print(solution)
 
 if __name__ == "__main__":
