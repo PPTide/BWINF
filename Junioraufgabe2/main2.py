@@ -37,7 +37,7 @@ def main() -> None:
   dates = [neededChange(i) for i in dates]
 
   # Änderungen sind maximal 1, da der Termin immer selbst geändert werden kann
-  dates = [0 if i == 0 else 1 for i in dates]
+  dates = [[0 if j == 0 else 1 for j in i] for i in dates]
 
   # Nach Termin anstatt Person sortieren. 
   dates = list(zip(*dates))
